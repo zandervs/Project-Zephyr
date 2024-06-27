@@ -3,7 +3,10 @@
 </svelte:head>
 
 <script lang="ts">
-	import SignIn from 'clerk-sveltekit/client/SignIn.svelte';
+  import SignIn from 'clerk-sveltekit/client/SignIn.svelte';
+  import ClerkLoading from 'clerk-sveltekit/client/ClerkLoading.svelte';
+  import ClerkLoaded from 'clerk-sveltekit/client/ClerkLoaded.svelte';
+  import LoadingSpinner from '$lib/LoadingSpinner.svelte';
 </script>
 
 <style lang="postcss">
@@ -49,6 +52,9 @@
   .sign-in-container {
     width: 100%;
     max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
 
@@ -59,7 +65,12 @@
 
   <div class="right-half">
     <div class="sign-in-container">
-      <SignIn redirectUrl="/" />
+      <ClerkLoading>
+        <LoadingSpinner className="text-neutral-50" />
+      </ClerkLoading>
+      <ClerkLoaded>
+        <SignIn redirectUrl="/" />
+      </ClerkLoaded>
     </div>
   </div>
 </div>
