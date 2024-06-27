@@ -6,13 +6,13 @@
 <NavBar />
 
 <main>
-  <h1>
+  <h1 class="prevent-select">
     Messages
   </h1>
 
   <Separator />
 
-  <div class="container">
+  <div class="container prevent-select">
     <div class="conversation-list">
       <ul role="list" class="divide-y divide-slate-700">
         <li class="chat-item flex justify-between gap-x-6 py-5">
@@ -114,6 +114,12 @@
     font-weight: 600;
   }
 
+  .prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
   .container {
     display: flex;
     flex-direction: row;
@@ -135,7 +141,7 @@
   }
 
   .chat-item:hover {
-    background-color: #071233;
+    background-color: #080733;
     cursor: pointer;
   }
 

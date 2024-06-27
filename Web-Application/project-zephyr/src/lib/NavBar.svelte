@@ -38,7 +38,7 @@
   }
 </script>
 
-<nav class="bg-gray-800">
+<nav class="bg-gray-800 prevent-select">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -101,5 +101,11 @@
   a:hover {
     background-color: #4B5563; /* Darker gray */
     color: white;
+  }
+
+  .prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
   }
 </style>
